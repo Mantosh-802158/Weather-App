@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>My Weather App</title>
+  </head>
+  <body>
+    <div class="mainHeaderDiv">
+      <div class="item-left">
+        <img
+          src="C:\Users\Lenovo\OneDrive\Desktop\Weather\assests\weather-cloud-sun-rain-lightning-logo-design-symbol-icon-template_23729-1780.avif"
+          id="weatherLogo"
+        />
+      </div>
+      <div class="item-right inputDiv">
+        <input
+          type="text"
+          placeholder="Enter your city name"
+          id="city"
+          class="inputTag"
+        />
+        <button id="getBtn" class="buttonTag">Submit</button>
+      </div>
+    </div>
+    <h3 id="h3"></h3>
+    <div class="parentflexDiv">
+      <!-- div1 -->
+      <div class="flexItems item1">
+        <div id="imageDiv1"></div>
+        <div class="contentDiv" id="content-div1"></div>
+      </div>
+      <!-- div2 -->
+      <div class="flexItems item2">
+        <div id="imageDiv2"></div>
+        <div class="contentDiv" id="content-div2"></div>
+      </div>
+      <div class="flexItems item3">
+        <div id="imageDiv3"></div>
+        <div class="contentDiv" id="content-div3"></div>
+      </div>
+      <div class="flexItems item4">
+        <div id="imageDiv4"></div>
+        <div class="contentDiv" id="content-div4"></div>
+      </div>
+      <div class="flexItems item5">
+        <div id="imageDiv5"></div>
+        <div class="contentDiv" id="content-div5"></div>
+      </div>
+      <div class="flexItems item6">
+        <div id="imageDiv6"></div>
+        <div class="contentDiv" id="content-div6"></div>
+      </div>
+    </div>
+
+    <div class="empty-div"></div>
+    <!-- footer code area -->
+    <div class="mainFooterDiv">
+      <div class="footer-div">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Services</a>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="footer-div">
+        <a href="#">See More</a>
+        <a href="#">API Used</a>
+        <a href="#">More Weather Conditions</a>
+        <a href="#">Official Documentation</a>
+      </div>
+      <div class="footer-div">
+        <a href="#">Visit OpenWeather.com</a>
+        <a href="#">Suggestions</a>
+        <a href="#">Feedback</a>
+        <!-- <a href="#">Learn More</a> -->
+      </div>
+      <div class="footer-div">
+        <a href="#">LinkedIn</a>
+        <a href="#">Github</a>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+/* designing header div */
+body {
+  background-color: cornflowerblue;
+}
+#weatherLogo {
+  width: 30%;
+  border-radius: 50%;
+}
+.mainHeaderDiv {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.item-left {
+  flex: 20%;
+}
+.item-right {
+  flex: 80%;
+}
+.inputDiv {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.inputTag {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid aliceblue;
+  /* background: none; */
+  font-size: 22px;
+  width: 70%;
+  margin: 5px;
+}
+.buttonTag {
+  background-color: lightcyan;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 22px;
+  margin: 5px;
+}
+.buttonTag:hover {
+  cursor: pointer;
+}
+
+/* designing flex div */
+.parentflexDiv {
+  /* border:1px solid white; */
+
+  margin-top: 20px;
+  display: flex;
+  width: 90%;
+  margin: auto;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.flexItems {
+  /* border:1px solid palevioletred; */
+  /* background-color: red; */
+  flex-basis: 28%;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-around;
+  font-size: 20px;
+  /* flex-template-columns: auto; */
+}
+
+.flexImage {
+  width: 60px;
+  height: 140px;
+}
+.contentDiv {
+  width: 70%;
+}
+h3 {
+  text-align: center;
+}
+
+
+/* designing footer */
+.mainFooterDiv{
+  /* border: 1px solid white; */
+  position:fixed;
+  bottom:0%;
+  left:0%;
+  right:0%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: aliceblue;
+  padding:10px;
+}
+.footer-div{
+  /* border: 1px solid red; */
+  padding:5px;
+  display: flex;
+  flex-direction: column;
+}
+a{
+  padding:5px;
+  text-decoration: none;
+  color: rgb(72, 76, 76);
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+a:hover{
+  text-decoration: underline;
+  color:crimson;
+}
+
+/* .empty-div{
+  margin-top:50%;
+  margin-bottom:10%;
+} */
