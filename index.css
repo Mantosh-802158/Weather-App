@@ -71,6 +71,7 @@ body {
 .flexImage {
   width: 60px;
   height: 140px;
+  border-radius: 15px;
 }
 .contentDiv {
   width: 70%;

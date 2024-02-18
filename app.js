@@ -3,6 +3,22 @@ let appkey = "&appid=4cebc248c1dace2bec598db6e933131e";
 
 let button = document.getElementById("getBtn");
 
+//styling image for initial stage:...
+function checkImageStyle() {
+  let images = document.getElementsByClassName("flexImage");
+  let firstFlexDiv = document.getElementById("content-div1");
+
+  for (let image of images) {
+    if (firstFlexDiv.innerHTML == "") {
+      image.style.display = "none";
+    } else {
+      image.style.display = "block";
+      // console.log("div-full");
+    }
+  }
+}
+
+checkImageStyle();
 let hours, minutes, secondss;
 function unixTimeToHumanReadable(seconds) {
   let ans = "";
@@ -114,28 +130,35 @@ function h3function(lastUpdated) {
 
 let createImageTag = (num) => {
   let source;
-  let image = document.createElement("img");
-  image.classList.add("flexImage");
-  console.log("inside creteimage function");
+  // let image = document.createElement("img");
+  // image.classList.add("flexImage");
+  // console.log("inside creteimage function");
+  let image;
   if (num == 1) {
+    image = document.getElementById("image1");
     source = "./assests/location_logo.png";
-    console.log("inside checking number");
+    // console.log("inside checking number");
   } else if (num == 2) {
+    image = document.getElementById("image2");
     source = "./assests/temp_logo.jpg";
   } else if (num == 3) {
+    image = document.getElementById("image3");
     source = "./assests/humidity_logo.jpg";
   } else if (num == 4) {
+    image = document.getElementById("image4");
     source = "./assests/pressure_logo.png";
   } else if (num == 5) {
+    image = document.getElementById("image5");
     source = "./assests/weather-2021-12-07.png";
   } else if (num == 6) {
+    image = document.getElementById("image6");
     source = "./assests/wind_logo.jpg";
   } else {
     console.log("image not created!");
   }
   image.src = source;
-  console.log("end of createimage function");
-  return image;
+  // console.log("end of createimage function");
+  // return image;
 };
 function convertToCelcius(kelvin) {
   let celcius = kelvin - 273.15;
@@ -146,7 +169,7 @@ function convertToCelcius(kelvin) {
 }
 function item1function(city, countryCode, finalTimeZone, latitude, longitude) {
   let div1 = document.getElementById("content-div1");
-  let imageDiv1 = document.getElementById("imageDiv1");
+  // let imageDiv1 = document.getElementById("imageDiv1");
   let inn_html =
     city +
     "<br/>" +
@@ -162,18 +185,20 @@ function item1function(city, countryCode, finalTimeZone, latitude, longitude) {
     "Longitude: " +
     longitude;
   div1.innerHTML = inn_html;
-  let image;
-  try {
-    image = createImageTag(1);
-  } catch (err) {
-    console.log("An error occured; ", err);
-  }
+  // let image;
+  // try {
+  //   image = createImageTag(1);
+  // } catch (err) {
+  //   console.log("An error occured; ", err);
+  // }
 
-  imageDiv1.appendChild(image);
+  // imageDiv1.appendChild(image);
+  checkImageStyle();
+  createImageTag(1);
 }
 function item2function(temp, min_temp, max_temp, feels_like) {
   let div2 = document.getElementById("content-div2");
-  let imageDiv2 = document.getElementById("imageDiv2");
+  // let imageDiv2 = document.getElementById("imageDiv2");
   let inn_html =
     "Temp: " +
     temp +
@@ -188,34 +213,37 @@ function item2function(temp, min_temp, max_temp, feels_like) {
     feels_like +
     "&deg;C";
   div2.innerHTML = inn_html;
-  let image;
-  image = createImageTag(2);
-  imageDiv2.appendChild(image);
+  // let image;
+  // image = createImageTag(2);
+  // imageDiv2.appendChild(image);
+  createImageTag(2);
 }
 
 function item3function(humidity) {
   let div3 = document.getElementById("content-div3");
-  let imageDiv3 = document.getElementById("imageDiv3");
+  // let imageDiv3 = document.getElementById("imageDiv3");
   let inn_html = "Humidity: " + humidity.toString() + "%";
   div3.innerHTML = inn_html;
-  let image;
-  image = createImageTag(3);
-  imageDiv3.appendChild(image);
+  // let image;
+  // image = createImageTag(3);
+  // imageDiv3.appendChild(image);
+  createImageTag(3);
 }
 
 function item4function(pressure) {
   let div4 = document.getElementById("content-div4");
-  let imageDiv4 = document.getElementById("imageDiv4");
+  // let imageDiv4 = document.getElementById("imageDiv4");
   let inn_html = "Pressure: " + pressure.toString() + " hPa";
   div4.innerHTML = inn_html;
-  let image;
-  image = createImageTag(4);
-  imageDiv4.appendChild(image);
+  // let image;
+  // image = createImageTag(4);
+  // imageDiv4.appendChild(image);
+  createImageTag(4);
 }
 
 function item5function(visibility, weather_desc, weather_main) {
   let div5 = document.getElementById("content-div5");
-  let imageDiv5 = document.getElementById("imageDiv5");
+  // let imageDiv5 = document.getElementById("imageDiv5");
   let inn_html =
     "Visibility: " +
     visibility.toString() +
@@ -227,14 +255,15 @@ function item5function(visibility, weather_desc, weather_main) {
     weather_main;
 
   div5.innerHTML = inn_html;
-  let image;
-  image = createImageTag(5);
-  imageDiv5.appendChild(image);
+  // let image;
+  // image = createImageTag(5);
+  // imageDiv5.appendChild(image);
+  createImageTag(5);
 }
 
 function item6function(wind_speed, wind_dir) {
   let div6 = document.getElementById("content-div6");
-  let imageDiv6 = document.getElementById("imageDiv6");
+  // let imageDiv6 = document.getElementById("imageDiv6");
   let inn_html =
     "Wind Speed: " +
     wind_speed.toString() +
@@ -245,15 +274,16 @@ function item6function(wind_speed, wind_dir) {
     " deg due North";
 
   div6.innerHTML = inn_html;
-  let image;
-  image = createImageTag(6);
-  imageDiv6.appendChild(image);
+  // let image;
+  // image = createImageTag(6);
+  // imageDiv6.appendChild(image);
+  createImageTag(6);
 }
 button.addEventListener("click", async () => {
   let cityName = document.getElementById("city").value;
   try {
     let response = await axios.get(halfWeather + cityName + appkey);
-    console.log(response);
+    // console.log(response);
     //heading of last updated
     let lastUpdatedUnix = response.data.dt;
     let lastUpdated = unixTimeToHumanReadable(lastUpdatedUnix);
@@ -300,7 +330,10 @@ button.addEventListener("click", async () => {
     let wind_dir = response.data.wind.deg;
     item6function(wind_speed, wind_dir);
   } catch (err) {
-    console.log("an error occured ", err);
+    let h3 = document.getElementById("h3");
+    h3.innerHTML="Try Entering another another name...<br/>Error: "+err.code;
+    // console.log("an error occured ", err);
+    console.log("An error occured!");
   }
   // console.log(cityName);
 });
